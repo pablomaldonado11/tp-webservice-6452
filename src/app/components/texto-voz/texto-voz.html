@@ -1,0 +1,47 @@
+<div class="tts-card">
+    <div class="tts-header">
+      Convertidor de Texto a Voz (OpenAI)
+    </div>
+  
+    <div class="tts-body">
+      <div class="form-group">
+        <label>Texto a convertir</label>
+        <textarea [(ngModel)]="textoIngresado" rows="4" placeholder="Escribí el texto que quieras escuchar..."></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label>Idioma de Destino</label>
+        <select [(ngModel)]="idiomaSeleccionado">
+          <option value="Spanish">Español</option>
+          <option value="English">Inglés</option>
+          <option value="French">Francés</option>
+          <option value="Korean">Coreano</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label>Voz</label>
+        <select [(ngModel)]="vozSeleccionada">
+          <option value="alloy">Alloy (Neutro)</option>
+          <option value="echo">Echo (Masculino)</option>
+          <option value="nova">Nova (Femenino)</option>
+        </select>
+      </div>
+  
+      <button (click)="convertirTextoAAudio()"  class="btn-generar">
+        {{    'Convertir a Audio' }}
+      </button>
+  
+      <div *ngIf="audioUrl" class="audio-container">
+
+        <label>Escuchar resultado:</label>
+      
+        <audio *ngIf="audioUrl"
+       [src]="audioUrl"
+       controls
+       autoplay>
+</audio>
+      
+      </div>
+    </div>
+  </div>

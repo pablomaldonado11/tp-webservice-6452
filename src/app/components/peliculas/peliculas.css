@@ -1,0 +1,5 @@
+.btn-card:hover {
+    transform: translateY(-4px);
+    background-color: rgba(255, 193, 7, 0.1) !important;
+    border-color: #ffc107 !important;
+  }

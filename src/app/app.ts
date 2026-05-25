@@ -1,12 +1,25 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+// 1. CORREGIMOS LA RUTA: Apunta a 'navbar' en vez de 'header'
+import { NavbarComponent } from './components/navbar/navbar'; 
+// 2. IMPORTAMOS EL FOOTER (Aseguramos que coincida con el nombre que declaraste adentro)
+import { FooterComponent } from './components/footer/footer'; 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    CommonModule, 
+    RouterOutlet, 
+    RouterLink, 
+    NavbarComponent, 
+    FooterComponent
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected readonly title = signal('tp-webservice-6452');
+export class AppComponent {
+  title = 'tp-webservice';
 }
