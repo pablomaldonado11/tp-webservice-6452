@@ -8,17 +8,19 @@ import { Observable } from 'rxjs';
 
 export class TextToSpeechService {
 
-  private apiUrl = 'https://open-ai-text-to-speech1.p.rapidapi.com/';
+  private apiUrl =
+    'https://open-ai-text-to-speech1.p.rapidapi.com/';
 
-  private apiKey = 'c0bde0c186mshed865ba92c0418fp111c5fjsn954d5f9f551d';
+  private apiKey ='c0bde0c186mshed865ba92c0418fp111c5fjsn954d5f9f551d';
+    
 
-  private apiHost = 'open-ai-text-to-speech1.p.rapidapi.com';
+  private apiHost ='open-ai-text-to-speech1.p.rapidapi.com';
+    
 
   constructor(private http: HttpClient) { }
 
   generarAudio(
     texto: string,
-    instrucciones: string,
     voz: string
   ): Observable<Blob> {
 
@@ -30,7 +32,6 @@ export class TextToSpeechService {
     const body = {
       model: 'tts-1',
       input: texto,
-      instructions: instrucciones,
       voice: voz
     };
 
